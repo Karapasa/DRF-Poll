@@ -1,0 +1,5 @@
+Django==2.2
+djangorestframework==3.10
+drf-yasg
+Pillow
+pytz==2021.1

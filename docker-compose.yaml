@@ -1,0 +1,10 @@
+services:
+  poll:
+    build: .
+    container_name: api-polling
+    restart: always
+    command: gunicorn -b 0.0.0.0:3005 TestTask.wsgi:application
+    ports:
+      - "3005:3005
+    volumes:
+      - ./db-sqlite:/poll/db.sqlite3
