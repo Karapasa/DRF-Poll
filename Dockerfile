@@ -1,7 +1,12 @@
-FROM python:3-alpine
+FROM ubuntu:latest
+
+RUN apt-get update -y
+RUN apt-get install -y python3-dev build-essential python3-pip
+RUN pip3 install --upgrade setuptools
+
 COPY . /poll
 WORKDIR /poll
-RUN pip install -r requirements.txt
-RUN python manage.py migrate --noinput
-RUN python manage.py createsuperuser
+RUN pip3 install --upgrade pip -r requirements.txt
+RUN python3 manage.py migrate --noinput
+RUN python3 manage.py createsuperuser
 EXPOSE 3005

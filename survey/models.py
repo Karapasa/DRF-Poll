@@ -74,4 +74,4 @@ class Answer(models.Model):
         verbose_name = 'Ответ'
         verbose_name_plural = 'Ответы'
         ordering = ['-submit_time']
-        unique_together = ['answer', 'question_id', 'user', 'anonymous_id']
+        unique_together = ['answer', 'question', 'user', 'anonymous_id']
