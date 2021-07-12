@@ -14,8 +14,8 @@ class SetUp(APITestCase):
         today = timezone.now()
         start_datetime = (today - datetime.timedelta(days=1))
         end_datetime = (today + datetime.timedelta(days=1))
-        self.admin = User.objects.create_superuser(username="Test-admin", password="admin")
-        self.user = User.objects.create_user(username="Test-user", password="user")
+        self.admin = User.objects.create_superuser(username="Test-admin", password="admin", email="admin@host.ru")
+        self.user = User.objects.create_user(username="Test-user", password="user", email="user@host.ru")
         self.survey = Survey.objects.create(name='тестовый опрос',
                                             description='тестовое описание',
                                             start_at=start_datetime,

@@ -3,8 +3,6 @@ services:
     build: .
     container_name: api-polling
     restart: always
-    command: gunicorn -b 0.0.0.0:3005 TestTask.wsgi:application
+    command: python3 manage.py runserver 0.0.0.0:3005
     ports:
-      - "3005:3005
-    volumes:
-      - ./db-sqlite:/poll/db.sqlite3
+      - "3005:3005"
